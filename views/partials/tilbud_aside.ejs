@@ -1,7 +1,13 @@
 <aside class="col-md-3">
     <div class="vl"></div>
     <div class="hl"></div>
-    <div>Tilbud 1</div>
-    <div>Tilbud 2</div>
-    <div>Tilbud 3</div>
+
+    <% for(let i = 0; i < content.tilbud.length; i++){ %>
+        <div id="tilbud_div">
+            <h3><%= content.tilbud[i].navn %></h3>
+            <img id="tilbud_img" src="images/Cykler/<%= content.tilbud[i].billede%>" alt="">
+            <p class="tilbud_p" id="tilbud_pris">Før <%= content.tilbud[i].pris %> kr. </p>
+            <p class="tilbud_p" id="tilbudspris">Nu kun <%= content.tilbud[i].tilbudspris %> kr.</p>
+        </div>
+        <%}%>
 </aside>

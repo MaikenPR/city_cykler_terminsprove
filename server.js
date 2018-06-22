@@ -14,7 +14,7 @@ require('./config/parsing')(app);
 
 // ROUTES
 //==================================================
-require('./routes/index')(app);
+require('./routes/allRoutes')(app);
 
 
 
