@@ -7,9 +7,10 @@ module.exports = function (app) {
 		try{
             const tilbud = await Tilbud();
             const kontakt = await Kontakt();
-            res.render('pages/index', { 'page': { 'title': 'Forside' }, 
-                'content': {'tilbud': tilbud }, 
-                'footer': {'kontakt': kontakt} });
+            res.render('pages/index', { 
+                'page': { 'title': 'Forside' }, 
+                'tilbud': tilbud, 
+                'kontakt': kontakt });
         } catch(error){
             res.send(error);
         }

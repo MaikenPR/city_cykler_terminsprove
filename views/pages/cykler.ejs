@@ -8,7 +8,7 @@
 <body>
     <div id="wrapper" class="container">
         <header>
-            
+
             <% include ../partials/navigation_partials.ejs %>
         </header>
 
@@ -16,15 +16,29 @@
 
             <h1 class="col-md-9">Cykler</h1>
             <h2 class="col-md-3">Tilbud</h2>
-            <% include ../partials/main_content.ejs %>
+            <article class="col-md-9">
+                <% include ../partials/main_content_hl.ejs %>
+                    <div id="cykel_kategori">
+                        <% for(let i = 0; i < cykel_kat.length; i++){ %>
+                            <a href="/cykler/kategori/<%= cykel_kat[i].id %>">
+                                <div class="col-md-4" id="cykel_typer">
+                                    <h3>
+                                        <%= cykel_kat[i].navn %>
+                                    </h3>
+                                    <img id="cyk_kat_img" src="images/Cykeltyper/<%= cykel_kat[i].billede%>" alt="">
+                                </div>
+                            </a>
+                            <%}%>
+                    </div>
+            </article>
             <% include ../partials/tilbud_aside.ejs %>
 
         </main>
         <footer>
-
+            <% include ../partials/footer_partials.ejs %>
         </footer>
     </div>
 </body>
-<% include ../partials/after_footer_partials.ejs %>
+
 
 </html>

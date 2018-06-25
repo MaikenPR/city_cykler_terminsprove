@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head_partials.ejs %>
+</head>
+
+<body>
+    <div id="wrapper" class="container">
+        <header>
+
+            <% include ../partials/navigation_partials.ejs %>
+        </header>
+
+        <main>
+
+            <h1 class="col-md-9">Cykler</h1>
+            <h2 class="col-md-3">Tilbud</h2>
+            <article class="col-md-9">
+                <% include ../partials/main_content_hl.ejs %>
+                
+                        <% for(let i = 0; i < cykel.length; i++){ %>
+                            <article class="cykel_article">
+                                    <div class="col-md-9">
+                                        <h3> <%= cykel[i].navn %> </h3>
+                                        <p> <%= cykel[i].beskrivelse %> </p>
+                                        <p class="col-md-6">Pris: <%= cykel[i].pris %> kr.</p>
+                                        <a class="mere_info col-md-6" href="#">Mere info</a>
+                                    </div>
+                                    <img class="cykelList_img" class="col-md-3" src="/images/Cykler/<%= cykel[i].billede %>" alt="">
+                                </article>
+                            <%}%>
+                            <div class="vl"></div>
+            </article>
+            <% include ../partials/tilbud_aside.ejs %>
+
+        </main>
+        <footer>
+            <% include ../partials/footer_partials.ejs %>
+        </footer>
+    </div>
+</body>
+
+
+</html>
