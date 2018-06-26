@@ -37,7 +37,6 @@ body{
 header{
     height: auto;
     width: auto;
-   
 }
 
 header img{
@@ -64,7 +63,7 @@ main:after {
     border-right: 3px solid #EDEDED;
     height: 100%;
     position: absolute;
-    right: 0%;
+    left: 0%;
     margin-left: 3px;
     top: 0px;
 }
@@ -75,10 +74,21 @@ h1, h2{
     color: #FF9E41;
 }
 
-/* TILBUD */
-aside{
-    margin-bottom: 30px;
+#forside_img{
+    height: 204px;
+    width: 268px;
+    margin-bottom: 20px;
 }
+
+#forside_text{
+    font-size: 10px;
+    padding-top: 20px;
+}
+
+/* TILBUD */
+/* aside{
+    margin-bottom: 30px;
+} */
 
 
 #tilbud_div{
