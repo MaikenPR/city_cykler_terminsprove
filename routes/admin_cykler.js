@@ -43,5 +43,5 @@ module.exports = function (app) {
             res.send('Der skete en fel');
         }
         res.end();
-    })
+    });
 };

@@ -52,20 +52,19 @@ Cykel.getAll = function () {
 }
 
 //UPDATE
-Cykel.updateOne = function (brand, billede, model, beskrivelse, pris, kategori, tilbudspris){
+Cykel.updateOne = function (id, brand, model, beskrivelse, pris, kategori, tilbudspris){
     return new Promise((resolve, reject) => {
         db.execute(`
         UPDATE cykler 
         SET
             cykler.fk_brand = ?,
-            cykler.billede = ?,
             cykler.model = ?,
             cykler.beskrivelse = ?,
             cykler.pris = ?,
             cykler.fk_kategori = ?,
             cykler.tilbudspris = ?
         WHERE id = ?
-        `, [brand, billede, model, beskrivelse, pris, kategori, tilbudspris], (error, result) => {
+        `, [id, brand, model, beskrivelse, pris, kategori, tilbudspris], (error, result) => {
             if(error) reject(error);
             resolve();
         })

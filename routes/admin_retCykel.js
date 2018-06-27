@@ -14,7 +14,7 @@ module.exports = function (app) {
                 'page': { 'title': 'Admin' },
                 'enCykel': enCykel[0],
                 'brand': brand,
-                'cykel_kat': cykel_kat,
+                'cykel_kat': cykel_kat
             });
         } catch (error) {
             console.log('ER DER FORBINDELSE???');
@@ -23,11 +23,13 @@ module.exports = function (app) {
     });
 
     // UPDATE - Redigerer en cykel
-    // app.post('/admin_retCykel/update/:id', async (req, res) => {
-    //     try{
-
-    //     } catch(error){
-    //         res.send('Der er sket en fejl');
-    //     }
-    // })
+    app.post('/admin_retCykel/update/:id', async (req, res) => {
+        try{
+            await Cykel.updateOne(req.params.id, req.body.brand, req.body.model, req.body.beskrivelse, req.body.pris, req.body.kategori, req.body.tilbudspris);
+            res.send('Dine ændringer blev gemt');     
+        } catch(error){
+            console.log('Howdy Partner!');
+            res.send('Der er sket en fejl');
+        }
+    })
 };

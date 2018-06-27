@@ -18,7 +18,7 @@
 
             <h2 class="admin_h2">Ret Cykel</h2>
 
-            <form id="retCykel" method="" action="/admin_retCykel/update">
+            <form id="retCykel" method="POST" action="/admin_retCykel/update/id">
                 <div class="form__inputGroup">
                     <label for="update_cykelBrand" class="input__label">Mærke</label>
                     <select name="brand" id="cykel_brand">
@@ -65,7 +65,7 @@
                         Har cyklen været på tilbud men skal ikke længere være det, fjern da bare prisen.
                     </p>
                 </div>
-                <button type="submit" onclick="return alert('')">Gem</button>
+                <button type="submit" >Gem</button>
             </form>
 
         </main>
