@@ -5,11 +5,11 @@ const Kontakt = require('../services/kontakt');
 module.exports = function (app) {
 	app.get('/', async (req, res) => {
 		try{
-            const tilbud = await Tilbud();
+            const treTilbud = await Tilbud.getTreRand();
             const kontakt = await Kontakt();
             res.render('pages/index', { 
                 'page': { 'title': 'Forside' }, 
-                'tilbud': tilbud, 
+                'tilbud': treTilbud, 
                 'kontakt': kontakt });
         } catch(error){
             res.send(error);

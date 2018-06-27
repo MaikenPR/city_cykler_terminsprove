@@ -194,3 +194,89 @@ footer{
 footer p {
     margin-bottom: 0;
 }
+
+
+/*=======================ADMIN STYLING====================================*/
+
+.admin_h1{
+    font-size: 30px;
+    color: rgb(172, 87, 7);
+    text-decoration-line: underline;
+    margin-left: 20px;
+}
+
+.admin_h2{
+    font-size: 20px;
+    color: rgb(196, 124, 58);
+    margin-left: 20px;
+}
+
+#admin_tilbud_div{
+    border: 1px solid rgb(214, 211, 211);
+    margin: 15px;
+    height: auto;
+}
+
+#cykel_img{
+    height: 80px;
+    width: 116px;
+}
+
+#cykel_div{
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+p span{
+    font-weight: 700;
+}
+
+.ret{
+    background-color: #EDEDED;
+    padding: 5px;
+    color: black;
+    border: 2px solid orange;
+}
+
+.ret:hover{
+    background-color: orange;
+    color: white;
+    border: 2px solid orange;
+}
+
+.slet{
+    background-color: #EDEDED;
+    padding: 5px;
+    color: black;
+    border: 2px solid red;
+}
+
+.slet:hover{
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+}
+
+#opretCykel{
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+#retCykel{
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+#retcykel_img{
+    height: 80px;
+    width: 116px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

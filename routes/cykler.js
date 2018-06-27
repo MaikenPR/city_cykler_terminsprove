@@ -7,13 +7,13 @@ module.exports = function (app) {
     app.get('/cykler', async (req, res) => {
         // console.log('Hej med dig');
         try {
-            const tilbud = await Tilbud();
+            const treTilbud = await Tilbud.getTreRand();
             const kontakt = await Kontakt();
             const cykel_kat = await Cykel.getKategorier();
-            // console.log(cykel_kat);
+            // console.log(cykel_kat[0].navn);
             res.render('pages/cykler', {
                 'page': { 'title': 'Cykler' },
-                'tilbud': tilbud,
+                'tilbud': treTilbud,
                 'kontakt': kontakt,
                 'cykel_kat': cykel_kat
             });
@@ -25,13 +25,13 @@ module.exports = function (app) {
 
     app.get('/cykler/kategori/:id', async (req, res) => {
         // console.log(req.params.id);
-        const tilbud = await Tilbud();
+        const treTilbud = await Tilbud.getTreRand();
         const kontakt = await Kontakt();
         const cykler = await Cykel.getCyklerByKat(req.params.id);
         // console.log(cykler);
         res.render('pages/cyklerByKat', {
             'page': { 'title': 'Cykler' },
-            'tilbud': tilbud,
+            'tilbud': treTilbud,
             'kontakt': kontakt,
             'cykel': cykler
         });
