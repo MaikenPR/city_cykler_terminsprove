@@ -40,7 +40,7 @@ module.exports = function (app) {
         if(result === true){
             res.redirect('/admin_cykler');
         } else{
-            res.send('Der skete en fel');
+            res.send('Der skete en fejl');
         }
         res.end();
     });

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 27. 06 2018 kl. 09:38:13
+-- Genereringstid: 29. 06 2018 kl. 12:35:57
 -- Serverversion: 10.1.26-MariaDB
 -- PHP-version: 7.1.8
 
@@ -110,14 +110,16 @@ INSERT INTO `cykler` (`id`, `billede`, `fk_brand`, `model`, `pris`, `beskrivelse
 (20, 'trehjulet3.jpg', 7, 'Maxi', 548, 'Den trehjulede velkendte trehjulede cykel fås også i andre farver, f. eks. I pink og blå. Gennem generationer har været den trehjulede cykel altid været det første valg. Cyklen har tippelad. Cyklen er, som alle vore øvrige cykler, solidt bygget, så den kan holde til dagligt og solidt brug. Cyklen er konstrueret, så barnet får den største fornøjelse af cyklen.', 6, NULL, NULL),
 (27, 'racer1.jpg', 4, 'Racer B29', 4995, 'Er man til fart og elegance, så er dette cyklen for dig. For her får du en smart, smuk og funktionel cykel, som bringer dig hurtigt frem til dit bestemmelsessted. Cyklen fås til både piger og drenge, store som små.', 2, NULL, NULL),
 (28, 'racer2.jpg', 5, 'Race4', 9599, 'Er du til specialcykler med superudstyr og gode køreegenskaber, så er dette cyklen for dig. Her får du 21 gear med tre klinger. Bremsesystemet er et af de allerbedste på markedet. Cyklen fås i flere størrelser til både kvinder og mænd. Cyklen fås i sølv, sort og rød og blå metalic.', 2, NULL, NULL),
-(35, 'MTB1.jpg', 1, 'Jala', 2195, 'Her er cyklen for dig, der skal være smart og hurtig. Du får her en supersmart mountainbike, der også er rigtig god til bykørsel. Cyklen har aerodynamisk facon, så vindmodstanden mindskes. Cyklen fås i flere størrelser og med forskelligt udstyr.', 1, NULL, NULL),
 (36, 'MTB2.jpg', 2, 'Mont blanc', 2995, 'Dette er den ultimative cykel til bykørsel. For her får du en rigtig supersmart og elegant mountainbike. Cyklen har aerodynamisk facon, så vindmodstanden mindskes. Cyklen fås i flere størrelser, farver og med forskelligt udstyr.', 1, NULL, 1600),
 (37, 'MTB3.jpg', 3, 'Fun', 2595, 'Er du barn eller ung og gerne vil have en mountainbike kan vi selvfølgelig også magte det. Cyklen fås i hvid med blå eller rød dekoration. Cyklen en særdeles god til bykørsel, så det bliver en leg at cykle til skole.', 1, NULL, NULL),
-(38, 'cykel1.jpg', 3, 'TEST TIL SLET', 3595, 'DETTE ER TIL TEST', 2, NULL, NULL),
 (39, 'cykel2.jpg', 1, 'TEST TIL SLET', 2995, 'DETTE ER TIL TEST', 3, NULL, NULL),
 (40, 'cykel3.jpg', 1, 'TIL TEST AF SLET', 1595, 'DETTE ER TIL TEST', 5, NULL, NULL),
 (41, 'cykel1.jpg', 6, 'TIL TEST AF SLET', 1795, 'DETTE ER TIL TEST', 2, NULL, NULL),
-(42, 'cykel2.jpg', 1, 'TIL TEST AF SLET', 3000, 'DETTE ER TIL TEST', 3, NULL, NULL);
+(44, 'cykel3.jpg', 1, 'TIL TEST AF OPRET', 2456, 'DETTE ER EN TEST', 5, NULL, NULL),
+(45, 'cykel1.jpg', 3, 'TIL TEST AF OPRET', 2456, 'DETTE ER EN TEST', 2, NULL, NULL),
+(46, 'cykel2.jpg', 6, 'TIL TEST AF OPRET', 2456, 'DETTE ER EN TEST', 3, NULL, NULL),
+(47, 'cykel2.jpg', 3, 'TIL TEST AF OPRET', 3333, 'Dette er en test', 3, NULL, NULL),
+(48, 'MTB1.jpg', 1, 'Jala', 2195, 'Her er cyklen for dig, der skal være smart og hurtig. Du får her en supersmart mountainbike, der også er rigtig god til bykørsel. Cyklen har aerodynamisk facon, så vindmodstanden mindskes. Cyklen fås i flere størrelser og med forskelligt udstyr.', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -315,7 +317,7 @@ ALTER TABLE `cykel_farve`
 -- Tilføj AUTO_INCREMENT i tabel `cykler`
 --
 ALTER TABLE `cykler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- Tilføj AUTO_INCREMENT i tabel `farve`
 --
@@ -351,8 +353,8 @@ ALTER TABLE `cykel_farve`
 -- Begrænsninger for tabel `cykler`
 --
 ALTER TABLE `cykler`
-  ADD CONSTRAINT `cykler_ibfk_1` FOREIGN KEY (`fk_kategori`) REFERENCES `kategori` (`id`),
-  ADD CONSTRAINT `cykler_ibfk_2` FOREIGN KEY (`fk_brand`) REFERENCES `brand` (`id`);
+  ADD CONSTRAINT `cykler_ibfk_1` FOREIGN KEY (`fk_brand`) REFERENCES `brand` (`id`),
+  ADD CONSTRAINT `cykler_ibfk_2` FOREIGN KEY (`fk_kategori`) REFERENCES `kategori` (`id`);
 
 --
 -- Begrænsninger for tabel `udstyr`

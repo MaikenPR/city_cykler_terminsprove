@@ -61,7 +61,8 @@
                     <label for="opret_cykeltilbudspris">Tilbudspris</label>
                     <input type="text" name="tilbudspris" id="cykel_tilbudspris" class="input__field">
                     <p>OBS! Skal produktet være på tilbud, indtast da en pris i feltet. Er det ikke et tilbud, lad feltet være
-                        tomt</p>
+                        tomt
+                    </p>
                 </div>
                 <button type="submit" onclick="return alert('Cyklen blev oprettet')">Opret cykel</button>
             </form>
@@ -86,8 +87,7 @@
                         <%= alleCykler[i].kategori %>
                     </p>
                     <a href="/admin_retCykel/<%= alleCykler[i].id %>" class="btn btn-primary ret">RET</a>
-                    <a href="/admin_cykler/delete/<%= alleCykler[i].id %>" onclick="confirm('Er du sikker på du vil slette?'); alert('Cyklen er slettet')"
-                        class="btn btn-primary slet">SLET</a>
+                    <a href="/admin_cykler/delete/<%= alleCykler[i].id %>" onclick="return minConfirmSlet('Er du sikker på du vil slette?', 'Cyklen er slettet')" class="btn btn-primary slet">SLET</a>
                 </div>
                 <%}%>
 
@@ -97,6 +97,18 @@
         <footer>
         </footer>
     </div>
+
+    <!-- <script>
+        function minConfirmSlet() {
+
+            if (confirm('Er du sikker på du vil slette?')) {
+                alert('Cyklen er slettet');
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script> -->
 </body>
 
 
