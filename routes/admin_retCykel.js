@@ -17,7 +17,6 @@ module.exports = function (app) {
                 'cykel_kat': cykel_kat
             });
         } catch (error) {
-            console.log('ER DER FORBINDELSE???');
             res.send(error);
         }
     });
@@ -25,11 +24,11 @@ module.exports = function (app) {
     // UPDATE - Redigerer en cykel
     app.post('/admin_retCykel/update/:id', async (req, res) => {
         try{
+            console.log(req.body);
             await Cykel.updateOne(req.params.id, req.body.brand, req.body.model, req.body.beskrivelse, req.body.pris, req.body.kategori, req.body.tilbudspris);
-            res.send('Dine ændringer blev gemt');     
+            res.redirect('/admin_cykler');     
         } catch(error){
-            console.log('Howdy Partner!');
             res.send('Der er sket en fejl');
-        }
-    })
+        };
+    });
 };

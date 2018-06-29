@@ -52,7 +52,10 @@ Cykel.getAll = function () {
 }
 
 //UPDATE
-Cykel.updateOne = function (id, brand, model, beskrivelse, pris, kategori, tilbudspris){
+Cykel.updateOne = function (id, brand, model, beskrivelse, pris, kategori, tilbudspris) {
+    if (tilbudspris == "") {
+        tilbudspris = null;
+    }
     return new Promise((resolve, reject) => {
         db.execute(`
         UPDATE cykler 
@@ -64,12 +67,20 @@ Cykel.updateOne = function (id, brand, model, beskrivelse, pris, kategori, tilbu
             cykler.fk_kategori = ?,
             cykler.tilbudspris = ?
         WHERE id = ?
-        `, [id, brand, model, beskrivelse, pris, kategori, tilbudspris], (error, result) => {
-            if(error) reject(error);
-            resolve();
-        })
-    })
-}
+        `, [brand, model, beskrivelse, pris, kategori, tilbudspris, id], (error, result) => { 
+            /*:: HUSK FOR CHRIST SAKE at rækkefølgen i sql-kaldet skal være den samme som i sql'en.
+            Fx havde jeg skrevet id før brand, så når kaldet når til WHERE id = ? har den ikke kunne finde
+            noget fordi den tager det i den samme rækkefølge. Så id, til sidst så den passer på hvor id'ets sprøgsmålstegn er
+             - altså ved WHERE (det er der id'et bliver nævnt). Det har ikke noget at side i forhold til rækkefølgen
+             på argumenterne oppe i functionens parantes*/
+                if (error) {
+                    console.log(error);
+                    reject(error)
+                };
+                resolve();
+            });
+    });
+};
 
 //DELETE
 Cykel.deleteOne = function (id) {
@@ -125,11 +136,13 @@ Cykel.getOneById = function (id) {
         SELECT 
             cykler.id,
             brand.navn AS brand,
+            cykler.fk_brand,
             cykler.model,
             cykler.billede,
             cykler.beskrivelse,
             cykler.pris,
-            kategori.navn AS kategori
+            kategori.navn AS kategori,
+            cykler.fk_kategori
         FROM cykler
         INNER JOIN brand ON fk_brand = brand.id
         INNER JOIN kategori ON fk_kategori = kategori.id
