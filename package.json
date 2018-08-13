@@ -1,25 +1,24 @@
 {
-  "name": "city_cykler_terminsprove",
+  "name": "city_cykler_template_med_login",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://www.w3schools.com/howto/howto_js_active_element.asp\r https://docs.ckeditor.com/ckeditor5/latest/builds/guides/quick-start.html#classic-editor",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaikenPR/city_cykler_terminsprove.git"
+    "url": ""
   },
   "author": "Maiken P. Rais",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MaikenPR/city_cykler_terminsprove/issues"
-  },
-  "homepage": "https://github.com/MaikenPR/city_cykler_terminsprove#readme",
+  "homepage": "",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mysql2": "^1.5.3",
     "nodemon": "^1.17.5"
-  }
+  },
+  "devDependencies": {}
 }
